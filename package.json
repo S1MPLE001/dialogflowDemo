@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "deploy": "gh-pages -d resource"
+    "deploy": "gh-pages -d ./"
   },
   "author": "",
   "license": "ISC",

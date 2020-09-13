@@ -117,7 +117,8 @@ app.get('/', (req, res) => {
     
     //     res.send(largeDataSet.join(""))
     // });
-    res.send('Ahoy')
+    // res.send('Ahoy')
+    res.render('./index.html')
 })
 
 

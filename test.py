@@ -1,21 +1,26 @@
 from spacy import load
-# from pprint import pprint
-# import 
-# import en_ner_bc5cdr_md
-nlp = load('en_ner_bc5cdr_md')
+import sys
 
-text = '''Myeloid derived suppressor cells (MDSC) are immature 
-          myeloid cells with immunosuppressive activity. 
-          They accumulate in tumor-bearing mice and humans 
-          with different types of cancer, including hepatocellular 
-          carcinoma (HCC).'''
+text = sys.argv[1]
 
-doc = nlp(text)
-# print(doc.ents)
 
-extracted_ents = {
-    'label': 'Diseases',
-    'entities': doc.ents
-}
+def func(text):
+    nlp = load('en_ner_bc5cdr_md')
 
-print(extracted_ents)
+    if text == "":
+        return "Seems like some problem. Speak again."
+
+    doc = nlp(text)
+
+    extracted_ents = {
+        'label': 'Diseases',
+        'entities': doc.ents
+    }
+
+    return extracted_ents
+
+print(func(text), flush = True)
+
+
+
+

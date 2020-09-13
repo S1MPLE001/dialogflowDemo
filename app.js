@@ -61,10 +61,10 @@ app.get('/', (req, res) => {
     res.send('abcd')
 })
 
-async function getEnts(text) {    
-        const python = spawn('python3', ['test2.py', text]);
+function getEnts(text) {    
+        const python = spawn('python3', ['test.py', text]);
         
-        const response = await readData(python).then(res => {
+        const response = readData(python).then(res => {
             return res;
         });
 
@@ -79,11 +79,11 @@ function readData(obj) {
         // let largeDataSet = [];
         var text = "";
             obj.stdout.on('data', (data) => {
-                const foo = async () => {
-                    text = await data.toString();
-                    await resolve(text);
-                }
-                foo();
+                // const foo = async () => {
+                    text = data.toString();
+                    resolve(text);
+                // }
+                // foo();
             });
         // resolve(text);
     });

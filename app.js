@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 })
 
 async function getEnts(text) {    
-        const python = spawn('python3', ['test.py', text]);
+        const python = spawn('python3', ['test2.py', text]);
         
         const response = await readData(python).then(res => {
             return res;
@@ -70,7 +70,6 @@ async function getEnts(text) {
 
         closeobj(python);
         return response;
-    
 }
 
 

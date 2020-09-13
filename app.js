@@ -103,27 +103,13 @@ app.post("/extract", (req, res) => {
 
 
 app.get('/', (req, res) => {
-    // var largeDataSet = [];
-    
-    // const python = spawn('python3', ['test.py']);
-    
-    // python.stdout.on('data', function (data) {
-    //     // console.log('Pipe data from python script ...');
-    //     largeDataSet.push(data);
-    // });
-    // // in close event we are sure that stream is from child process is closed
-    // python.on('close', (code) => {
-    //     // console.log(`child process close all stdio with code ${code}`);
-    
-    //     res.send(largeDataSet.join(""))
-    // });
-    // res.send('Ahoy')
-    res.render('./index.html')
+    // res.render('./index.html')
+    res.send('abcd')
 })
 
 
 
 // app.listen(3000, () => console.log(`Example app listening on port.!`))
 app.listen(process.env.PORT || 8000, function() {
-    console.log("Server up and listening on" + process.env.PORT);
+    console.log("Server up and listening on");
   });
